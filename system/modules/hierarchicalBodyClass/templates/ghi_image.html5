@@ -1,5 +1,0 @@
-<?php if(is_a($this->objFile, 'FilesModel')): ?>
-     <img src="<?php echo $this->objFile->path; ?>" alt="<?php echo $this->objFile->name; ?>">
-<?php else: ?>
-    <?php echo $GLOBALS['TL_LANG']['GHI']['noImage']; ?>
-<?php endif; ?>

@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Global Header Image
+ * Hierarchical Body Class
  *
  * Copyright (c) 2013 Martin Treml
  *
- * @package   globalHeaderImage
+ * @package   hierarchicalBodyClass
  * @author    Martin Treml
  * @license   LGPL
  * @copyright Martin Treml
@@ -17,6 +17,4 @@
  * Add the parseTags function to the Inserttags hook
  */
 
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('GlobalHeaderImage', 'insertTags');
-
-$GLOBALS['GHI']['path'] = 'files/industrie_informatik/userdata/header_images';
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('MrTool\HierarchicalBodyClass', 'insertTags');

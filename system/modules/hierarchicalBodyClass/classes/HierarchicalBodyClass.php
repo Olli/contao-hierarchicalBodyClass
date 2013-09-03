@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Global Header Image
+ * Hierarchical Body Class
  *
  * Copyright (c) 2013 Martin Treml
  *
- * @package   globalHeaderImage
+ * @package   hierarchicalBodyClass
  * @author    Martin Treml
  * @license   LGPL
  * @copyright Martin Treml
  */
 
 
-// Idea: use an inserttag flag to render the output as template or plain text
+namespace MrTool;
 
-class GlobalHeaderImage extends Controller
+class HierarchicalBodyClass extends \Controller
 {
     
     public function insertTags($strTag){
@@ -22,7 +22,7 @@ class GlobalHeaderImage extends Controller
         $arrParts = explode('::', $strTag);
         
         // check if it is an global header image
-        if ($arrParts[0] != 'ghi') {
+        if ($arrParts[0] != 'hbc') {
             return false;
         }
         
@@ -30,13 +30,13 @@ class GlobalHeaderImage extends Controller
         if($arrParts[1] == 'default'){
             
             global $objPage;
-            return $this->getHeaderImage($objPage->id);
+            return $this->getBodyClass($objPage->id);
             
         }
         
         // check if user wants explicit image
         if(intval($arrParts[1]) != 0){
-            return $this->getHeaderImage(intval($arrParts[1]), false);
+            return $this->getBodyClass(intval($arrParts[1]), false);
         }
          
         return false;
@@ -47,7 +47,7 @@ class GlobalHeaderImage extends Controller
     private function crawlPages($pageId){
         
         // get all entries from tl_page and check in while to prevent DeadLock - thanks to lindesbs
-        $database = Database::getInstance();
+        $database = \Database::getInstance();
         $pageCount = $database->prepare("SELECT count(id) as count FROM tl_page")->execute()->fetchAssoc();
         $i = 0;
         
@@ -55,10 +55,10 @@ class GlobalHeaderImage extends Controller
             
             $objPage = $this->getPageDetails($pageId);
             
-            $objFile = $this->getFromPage($pageId, $objPage);
+            $cssClass = $this->getFromPage($pageId, $objPage);
             
-            if($objFile){
-                return $objFile;
+            if($cssClass){
+                return $cssClass;
             }
             
             // set the id to the next level to get the data from the parrent entry
@@ -75,28 +75,24 @@ class GlobalHeaderImage extends Controller
             $objPage = $this->getPageDetails($pageId);
         }
         
-        // check if current page has an image set
-        if($objPage->headerImage){
-            return $objFile = \FilesModel::findByPk($objPage->headerImage);
+        // check if current page has an css class
+        if($objPage->cssClass){
+            return $objPage->cssClass;
         }else{
             return false;
         }
         
     }
     
-    private function getHeaderImage($pageId, $recursive=true){
+    private function getBodyClass($pageId, $recursive=true){
         
         if($recursive){
-            $objFile = $this->crawlPages($pageId);
+            $cssClass = $this->crawlPages($pageId);
         }else{
-            $objFile = $this->getFromPage($pageId);
+            $cssClass = $this->getFromPage($pageId);
         }
         
-        // use frontend template for response instead of direct output - thanks to lindesbs        
-        $objTemplate = new \FrontendTemplate('ghi_image');
-		$objTemplate->objFile = $objFile;
-        
-        return $objTemplate->parse();
+        return $cssClass;
         
     }
     
