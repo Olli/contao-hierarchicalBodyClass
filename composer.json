@@ -1,0 +1,38 @@
+{
+    "name": "mrtool/contao-hierarchical-body-class",
+    "description": "An contao extension which provides an inserttag to add an css-class based on the sites parent sites",
+    "keywords": ["contao", "inserttag", "class", "body"],
+    "type": "contao-module",
+    "homepage": "http://www.r2pi.de",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Martin Treml",
+            "homepage": "http://www.r2pi.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/MrTool/contao-hierarchicalBodyClass/issues",
+        "irc": "irc://irc.freenode.org/contao.de",
+        "source": "https://github.com/MrTool/contao-hierarchicalBodyClass"
+    },
+    "require": {
+        "php": ">=5.3",
+        "contao/core": ">=3.3,<4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "MrTool\\HierarchicalBodyClass": "src"
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "contao": "system/modules/contao-hierarchical-body-class"
+            }
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
