@@ -61,6 +61,4 @@ class InsertTags extends \Controller {
 
     }
 
-
-}
 }

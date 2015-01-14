@@ -108,7 +108,7 @@ class HierarchicalBodyClass extends \Controller
         }
 
         // check if class is hbc inserttag
-        if (strpos($strClass, '{{hbc')) {
+        if (strpos($strClass, '{hbc::')) {
             return;
         }
 
