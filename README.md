@@ -14,7 +14,7 @@ How to use:
 
 You can use following inserttags directly in the backend page css field or in the template
 
-```php
+```
 
 {{hbc::default}}
 Iterates back to the root page and returns every found valid css class string
@@ -33,14 +33,14 @@ It is also possible to use the extension directly in php
 
 ```php
 
-    // Default - like {{hbc::default}}
-    $classes = MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass::getAll($pageId)
-    
-    // First - like {{hbc::first}}
-    $classes = MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass::getFirst($pageId)
-    
-    // From - like {{hbc::12}}
-    $classes = MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass::getFrom($pageId)
+// Default - like {{hbc::default}}
+$classes = MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass::getAll($pageId)
+
+// First - like {{hbc::first}}
+$classes = MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass::getFirst($pageId)
+
+// From - like {{hbc::12}}
+$classes = MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass::getFrom($pageId)
 
 ```
 
