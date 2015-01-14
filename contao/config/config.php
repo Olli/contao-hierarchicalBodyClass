@@ -17,4 +17,4 @@
  * Add the parseTags function to the Inserttags hook
  */
 
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('MrTool\HierarchicalBodyClass\Helper', 'insertTags');
+$GLOBALS['TL_HOOKS']['replaceInserdd .Tags'][] = array('MrTool\HierarchicalBodyClass\Helper\InsertTags', 'parseInsertTags');

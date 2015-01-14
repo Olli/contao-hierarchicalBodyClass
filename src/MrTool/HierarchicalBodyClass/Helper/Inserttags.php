@@ -15,7 +15,7 @@ namespace MrTool\HierarchicalBodyClass\Helper;
 
 use MrTool\HierarchicalBodyClass\Provider\HierarchicalBodyClass;
 
-class insertTags extends \Controller {
+class InsertTags extends \Controller {
 
 
     /**
@@ -24,7 +24,7 @@ class insertTags extends \Controller {
      * @param string $strTag
      * @return mixed
      */
-    public function parseInserttags($strTag){
+    public function parseInsertTags($strTag){
 
         $arrParts = explode('::', $strTag);
 
