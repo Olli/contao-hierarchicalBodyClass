@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Hierarchical Body Class
