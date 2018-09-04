@@ -1,5 +1,5 @@
 {
-    "name": "mrtool/contao-hierarchical-body-class",
+    "name": "Olli/contao-hierarchical-body-class",
     "description": "An contao extension which provides an inserttag to add an css-class based on the sites parent sites",
     "keywords": ["contao", "inserttag", "class", "body"],
     "type": "contao-module",
@@ -15,7 +15,7 @@
     "support": {
         "issues": "https://github.com/MrTool/contao-hierarchicalBodyClass/issues",
         "irc": "irc://irc.freenode.org/contao.de",
-        "source": "https://github.com/MrTool/contao-hierarchicalBodyClass"
+        "source": "https://github.com/Olli/contao-hierarchicalBodyClass"
     },
     "require": {
         "php": ">=7.1",
