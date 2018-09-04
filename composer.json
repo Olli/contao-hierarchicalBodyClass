@@ -18,8 +18,8 @@
         "source": "https://github.com/MrTool/contao-hierarchicalBodyClass"
     },
     "require": {
-        "php": ">=5.3",
-        "contao/core": ">=3.3,<4.0"
+        "php": ">=5.6",
+        "contao/core": ">=4.4"
     },
     "autoload": {
         "psr-0": {
